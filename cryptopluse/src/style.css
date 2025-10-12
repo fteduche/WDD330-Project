@@ -13,19 +13,56 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* A basic reset for the body to remove default margin */
 body {
   margin: 0;
-  display: flex;
+  /* Use Grid for a robust centering solution */
+  display: grid;
+  /* This single property centers the direct child (#app) both horizontally and vertically */
   place-items: center;
-  min-width: 320px;
+  /* Ensure the body takes up at least the full height of the screen */
   min-height: 100vh;
+  /* Optional: Add some padding so the content doesn't touch the screen edges */
+  padding: 1rem;
+  box-sizing: border-box;
+  /* Ensures padding doesn't add to the total dimensions */
 }
 
 #app {
+  /* Set a max-width for the container so it doesn't get too wide on large screens */
   max-width: 1280px;
-  margin: 0 auto;
+  /* Ensure the container is responsive on smaller screens */
+  width: 100%;
+  /* Optional: Add padding inside your container */
   padding: 2rem;
+  /* The h2 and table inside will be center-aligned by default */
   text-align: center;
+}
+
+/* You can keep your existing table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  /* If you want the text in table cells to be left-aligned */
+  text-align: left;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #444;
+}
+
+th {
+  background-color: #333;
+  color: #ffffff;
 }
 
 
